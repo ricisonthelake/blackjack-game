@@ -1,10 +1,8 @@
-
 let player = {
-    name: prompt("Enter your player name: "),
-    chips: 0
+    name: "Player One",
+    chips: 500
 };
-let playersChips = prompt("Enter your bank of chips: ")
-player.chips = Number(playersChips)
+
 let cards = [];
 let sum = 0;
 let bet = 0;
@@ -34,23 +32,26 @@ function getRandomCard() {
 
 function startGame() {
     let betAmountEl = document.getElementById("bet-amount").value;
+
     if (betAmountEl < 1) {
         alert("please place a bet")
+    } else if (betAmountEl > player.chips) {
+        alert("cannot bet more than your bank")
     } else {
-        playerBetEl.textContent = player.name + " Bets: $" + betAmountEl
-    }
-    isAlive = true
-    hasBlackJack = false;
+        playerBetEl.textContent = player.name + " Bets: $" + betAmountEl;
 
-    let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards = [firstCard, secondCard]
-    sum = firstCard + secondCard
-    renderGame();
+        isAlive = true
+        hasBlackJack = false;
+
+        let firstCard = getRandomCard()
+        let secondCard = getRandomCard()
+        cards = [firstCard, secondCard]
+        sum = firstCard + secondCard
+        renderGame();
+    }
 }
 
 function renderGame() {
-
     cardsEl.textContent = "Cards: ";
 
     for (let i = 0; i < cards.length; i++) {
@@ -73,12 +74,13 @@ function renderGame() {
 }
 
 function updateChips(alive) {
-    console.log(Number(player.chips))
     let betAmountEl = document.getElementById("bet-amount").value;
     if (betAmountEl < 1) {
         alert("please place a bet")
+        betAmountEl = 0
     } else if (betAmountEl > player.chips) {
         alert("cannot bet more than your bank")
+        betAmountEl = 0
     } else {
         playerBetEl.textContent = player.name + " Bets: $" + betAmountEl
     }
@@ -90,14 +92,32 @@ function updateChips(alive) {
         player.chips += Number(betAmountEl);
         playerEl.textContent = player.name + "'s Bank" + ": $" + player.chips;
     }
+    if (player.chips < 1) {
+        alert("your bank went to 0 and has been reset")
+        player.chips += 500
+        playerEl.textContent = player.name + "'s Bank" + ": $" + player.chips;
+    }
 }
 
 function getNewCard() {
-    if (isAlive === true && hasBlackJack === false) {
-        let newCard = getRandomCard();
-        sum += newCard;
-        cards.push(newCard);
-        renderGame();
+    let betAmountEl = document.getElementById("bet-amount").value;
+
+    if (betAmountEl < 1) {
+        betAmountEl = 0
+        alert("please place a bet")
+
+    } else if (betAmountEl > player.chips) {
+        betAmountEl = 0
+        alert("cannot bet more than your bank")
+
+    } else {
+        playerBetEl.textContent = player.name + " Bets: $" + betAmountEl
+        if (isAlive === true && hasBlackJack === false) {
+            let newCard = getRandomCard();
+            sum += newCard;
+            cards.push(newCard);
+            renderGame();
+        }
     }
 }
 
