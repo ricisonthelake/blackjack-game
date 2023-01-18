@@ -34,9 +34,82 @@ let player = {
 ```
 
 - booleans
+
+```js
+let hasBlackJack = false;
+let isAlive = false;
+```
+
 - if else statements
+
+```js
+    if (betAmountEl < 1) {
+        betAmountEl = 0
+        alert("please place a bet")
+
+    } else if (betAmountEl > player.chips) {
+        betAmountEl = 0
+        alert("cannot bet more than your bank")
+
+    } else {
+        playerBetEl.textContent = player.name + " Bets: $" + betAmountEl
+        if (isAlive === true && hasBlackJack === false) {
+            let newCard = getRandomCard();
+            sum += newCard;
+            cards.push(newCard);
+            renderGame();
+        }
+    }
+```
+
 - comparison operators
+
+```js
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?";
+    } else if (sum === 21) {
+        message = "You've got Blackjack!";
+        hasBlackJack = true;
+
+    } else {
+        message = "You lose!";
+        isAlive = false;
+    }
+```
+
 - logical operators
+
+```js
+        if (isAlive === true && hasBlackJack === false) {
+            let newCard = getRandomCard();
+            sum += newCard;
+            cards.push(newCard);
+            renderGame();
+        }
+```
+
 - loops
+
+```js
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " ";
+    }
+```
+
 - the Math object
+
+```js
+    let randomNumber = Math.floor(Math.random() * 13) + 1;
+```
+
 - return statements
+
+```js
+    if (randomNumber > 10) {
+        return 10;
+    } else if (randomNumber === 1) {
+        return 11;
+    } else {
+        return randomNumber;
+    }
+```
