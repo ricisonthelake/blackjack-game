@@ -8,7 +8,7 @@
 >
 >There are no images used in the game. Instead cards 2 through 10 are used at face value. Picture cards (jack, queen, king) are used at a value of 10 each. Ace is used at a value of 11.
 >
-> The player starts with a bank of 500. The player can place bets from 1 up to the amount left in the player's bank. If the player's bank drops to 0 or below, it is immediately reset to 500 and the player may proceed to play.
+> The player starts with a bank of $500. The player can place bets from $1 up to the amount left in the player's bank. When the player gets 21 without going over, the player wins, and the player's bank is incremented by the amount placed as a bet. If the player goes over 21, the player loses, and the player's bank is decremented by the amount placed as a bet. If the player's bank drops to 0 or below, it is immediately reset to $500 and the player may continue to play.
 
 ***
 
