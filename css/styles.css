@@ -1,0 +1,44 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 20em;
+    max-width: 90%;
+    min-height: 100vh;
+    margin: 3em auto;
+    text-align: center;
+    color: white;
+    background-image: url(/images/table.png);
+    background-size: cover;
+    font-weight: bold;
+}
+
+
+h1 {
+    color: goldenrod;
+}
+
+
+#message-el {
+    max-width: 90%;
+    margin: .75em;
+    font-style: italic;
+}
+
+button {
+    width: 150px;
+    margin: .25em auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #016f32;
+    background-color: goldenrod;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+}
+
+.player-place-bets {
+    margin-top: 1rem;
+}
+
+#bet-amount {
+    width: 45px;
+}

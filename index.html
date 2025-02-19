@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack Game</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <div " class=" player-place-bets">
+            <label for=" betAmount">Place your bet:</label>
+            <input id="bet-amount" type="number" name="bet-amount" min="1" placeholder="0">
+        </div>
+
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Sum:</p>
+    </div>
+    <button id="startGameBtn" onclick="startGame()">Start Game</button>
+    <button id="getNewCardBtn" onclick="getNewCard()">New Card</button>
+
+    </div>
+    <p id="player-bet">Place Your Bet: $0</p>
+    <p id="player-el"></p>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
