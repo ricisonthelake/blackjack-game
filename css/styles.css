@@ -6,7 +6,7 @@ body {
     margin: 3em auto;
     text-align: center;
     color: white;
-    background-image: url(/images/table.png);
+    background-image: url("/images/table.png");
     background-size: cover;
     font-weight: bold;
 }
